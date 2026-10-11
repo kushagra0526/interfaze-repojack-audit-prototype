@@ -1,0 +1,22 @@
+diff --git a/README.md b/README.md
+index 81239ef..75fce93 100644
+--- a/README.md
++++ b/README.md
+@@ -1,7 +1,7 @@
+ # SDK
+ ```bash
+-git clone https://github.com/old-co/sdk-python.git
++git clone https://github.com/newco/sdk-python.git
+ cd sdk-python
+ pip install -e .
+ ```
+-See also the [JS SDK](https://github.com/Old-Co/sdk-js).
++See also the [JS SDK](https://github.com/newco/sdk-js).
+diff --git a/setup.py b/setup.py
+index d97655f..a3339f8 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,2 +1,2 @@
+ from setuptools import setup
+-setup(name="oldco", url="https://github.com/old-co/sdk-python")
++setup(name="oldco", url="https://github.com/newco/sdk-python")

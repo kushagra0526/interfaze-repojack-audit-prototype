@@ -1,0 +1,20 @@
+
+== 8 references to 'old-co' across 5 repos
+   CRITICAL auto-executed        ci-templates/.github/workflows/release.yml:4 DANGLING
+   CRITICAL dependency           web-app/package.json:3                 HIJACKED
+   HIGH     site navigation      docs/docs.json:2                       PROFILE_CLAIMED
+   HIGH     copy-paste install   sdk-python/README.md:3                 REDIRECT -> newco/sdk-python
+   HIGH     copy-paste install   starter/README.md:2                    REDIRECT -> newco/starter
+   MEDIUM   package metadata     sdk-python/setup.py:2                  REDIRECT -> newco/sdk-python
+   MEDIUM   package metadata     web-app/package.json:4                 REDIRECT -> newco/web-app
+   LOW      link                 sdk-python/README.md:7                 REDIRECT -> newco/sdk-js
+
+== left for a person (no redirect target, not rewritten)
+   ci-templates/.github/workflows/release.yml:4: uses: old-co/setup-tool (DANGLING)
+   web-app/package.json:3: github:old-co/utils (HIJACKED)
+
+== quickstart lint
+   starter    WRONG_REPO         clones 'nextjs-template' but this README belongs to 'starter'
+   starter    IGNORED_EXAMPLE    '.env.example' is not in the repo; .gitignore '.env*' matches it
+
+wrote out/report.html, out/findings.json, out/patches/

@@ -1,0 +1,136 @@
+{
+ "org": "newco",
+ "old": "old-co",
+ "repos_scanned": 5,
+ "refs": [
+  {
+   "source": "github:newco/ci-templates",
+   "location": ".github/workflows/release.yml:4",
+   "url": "uses: old-co/setup-tool",
+   "repo": "setup-tool",
+   "context": "- uses: old-co/setup-tool@v1",
+   "kind": "auto-executed",
+   "severity": "CRITICAL",
+   "why": "no redirect: the new owner of the name can create this repo now",
+   "status": "DANGLING",
+   "fix_to": "",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/web-app",
+   "location": "package.json:3",
+   "url": "github:old-co/utils",
+   "repo": "utils",
+   "context": "\"dependencies\": {\"utils\": \"github:old-co/utils#v2\"},",
+   "kind": "dependency",
+   "severity": "CRITICAL",
+   "why": "a repository with this name already exists under the new owner of the old namespace",
+   "status": "HIJACKED",
+   "fix_to": "",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/docs",
+   "location": "docs.json:2",
+   "url": "https://github.com/old-co",
+   "repo": null,
+   "context": "\"footer\": {\"socials\": {\"github\": \"https://github.com/old-co\"}}",
+   "kind": "site navigation",
+   "severity": "HIGH",
+   "why": "a navigation link on a live site",
+   "status": "PROFILE_CLAIMED",
+   "fix_to": "https://github.com/newco",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/sdk-python",
+   "location": "README.md:3",
+   "url": "https://github.com/old-co/sdk-python.git",
+   "repo": "sdk-python.git",
+   "context": "git clone https://github.com/old-co/sdk-python.git",
+   "kind": "copy-paste install",
+   "severity": "HIGH",
+   "why": "readers paste this and run whatever the URL serves",
+   "status": "REDIRECT -> newco/sdk-python",
+   "fix_to": "https://github.com/newco/sdk-python",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/starter",
+   "location": "README.md:2",
+   "url": "https://github.com/old-co/nextjs-template.git",
+   "repo": "nextjs-template.git",
+   "context": "git clone https://github.com/old-co/nextjs-template.git",
+   "kind": "copy-paste install",
+   "severity": "HIGH",
+   "why": "readers paste this and run whatever the URL serves",
+   "status": "REDIRECT -> newco/starter",
+   "fix_to": "https://github.com/newco/starter",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/sdk-python",
+   "location": "setup.py:2",
+   "url": "https://github.com/old-co/sdk-python",
+   "repo": "sdk-python",
+   "context": "setup(name=\"oldco\", url=\"https://github.com/old-co/sdk-python\")",
+   "kind": "package metadata",
+   "severity": "MEDIUM",
+   "why": "published to the registry as the project's repository/homepage",
+   "status": "REDIRECT -> newco/sdk-python",
+   "fix_to": "https://github.com/newco/sdk-python",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/web-app",
+   "location": "package.json:4",
+   "url": "https://github.com/old-co/web-app.git",
+   "repo": "web-app.git",
+   "context": "\"repository\": {\"url\": \"git+https://github.com/old-co/web-app.git\"}",
+   "kind": "package metadata",
+   "severity": "MEDIUM",
+   "why": "published to the registry as the project's repository/homepage",
+   "status": "REDIRECT -> newco/web-app",
+   "fix_to": "https://github.com/newco/web-app",
+   "weight": 0
+  },
+  {
+   "source": "github:newco/sdk-python",
+   "location": "README.md:7",
+   "url": "https://github.com/Old-Co/sdk-js",
+   "repo": "sdk-js",
+   "context": "See also the [JS SDK](https://github.com/Old-Co/sdk-js).",
+   "kind": "link",
+   "severity": "LOW",
+   "why": "plain link or badge",
+   "status": "REDIRECT -> newco/sdk-js",
+   "fix_to": "https://github.com/newco/sdk-js",
+   "weight": 0
+  }
+ ],
+ "old_owner_now": {
+  "exists": true,
+  "login": "old-co",
+  "type": "Organization",
+  "name": "(someone else)",
+  "created_at": "2026-01-01T00:00:00Z",
+  "public_repos": 1,
+  "bio": "(made-up demo)"
+ },
+ "quickstart": [
+  {
+   "code": "WRONG_REPO",
+   "line": 2,
+   "text": "git clone https://github.com/old-co/nextjs-template.git",
+   "detail": "clones 'nextjs-template' but this README belongs to 'starter'",
+   "repo": "starter"
+  },
+  {
+   "code": "IGNORED_EXAMPLE",
+   "line": 4,
+   "text": "cp .env.example .env",
+   "detail": "'.env.example' is not in the repo; .gitignore '.env*' matches it",
+   "repo": "starter"
+  }
+ ]
+}

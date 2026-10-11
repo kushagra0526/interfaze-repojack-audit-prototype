@@ -1,0 +1,11 @@
+diff --git a/package.json b/package.json
+index e13576f..f35e66d 100644
+--- a/package.json
++++ b/package.json
+@@ -1,5 +1,5 @@
+ {
+   "name": "web-app",
+   "dependencies": {"utils": "github:old-co/utils#v2"},
+-  "repository": {"url": "git+https://github.com/old-co/web-app.git"}
++  "repository": {"url": "git+https://github.com/newco/web-app.git"}
+ }

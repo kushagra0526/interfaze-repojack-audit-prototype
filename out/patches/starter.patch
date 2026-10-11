@@ -1,0 +1,12 @@
+diff --git a/README.md b/README.md
+index 91a599a..7ca0bba 100644
+--- a/README.md
++++ b/README.md
+@@ -1,5 +1,5 @@
+ ```bash
+-git clone https://github.com/old-co/nextjs-template.git
+-cd nextjs-template
++git clone https://github.com/newco/starter.git
++cd starter
+ cp .env.example .env
+ ```
